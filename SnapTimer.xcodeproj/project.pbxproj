@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0479F311D6688F70001C14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F301D6688F70001C14F /* AppDelegate.swift */; };
+		E0479F331D6688F70001C14F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F321D6688F70001C14F /* ViewController.swift */; };
+		E0479F361D6688F70001C14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0479F341D6688F70001C14F /* Main.storyboard */; };
+		E0479F381D6688F70001C14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0479F371D6688F70001C14F /* Assets.xcassets */; };
+		E0479F3B1D6688F70001C14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0479F391D6688F70001C14F /* LaunchScreen.storyboard */; };
+		E0479F461D6688F80001C14F /* SnapTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F451D6688F80001C14F /* SnapTimerTests.swift */; };
+		E0479F511D6688F80001C14F /* SnapTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F501D6688F80001C14F /* SnapTimerUITests.swift */; };
+		E0479F621D6691C50001C14F /* SnapTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F611D6691C50001C14F /* SnapTimer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0479F421D6688F80001C14F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0479F251D6688F70001C14F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0479F2C1D6688F70001C14F;
+			remoteInfo = SnapTimer;
+		};
+		E0479F4D1D6688F80001C14F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0479F251D6688F70001C14F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0479F2C1D6688F70001C14F;
+			remoteInfo = SnapTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E0479F2D1D6688F70001C14F /* SnapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0479F301D6688F70001C14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0479F321D6688F70001C14F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0479F351D6688F70001C14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0479F371D6688F70001C14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0479F3A1D6688F70001C14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0479F3C1D6688F70001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0479F411D6688F80001C14F /* SnapTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0479F451D6688F80001C14F /* SnapTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerTests.swift; sourceTree = "<group>"; };
+		E0479F471D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0479F501D6688F80001C14F /* SnapTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerUITests.swift; sourceTree = "<group>"; };
+		E0479F521D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0479F611D6691C50001C14F /* SnapTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0479F2A1D6688F70001C14F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F3E1D6688F80001C14F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F491D6688F80001C14F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0479F241D6688F70001C14F = {
+			isa = PBXGroup;
+			children = (
+				E0479F2F1D6688F70001C14F /* SnapTimer */,
+				E0479F441D6688F80001C14F /* SnapTimerTests */,
+				E0479F4F1D6688F80001C14F /* SnapTimerUITests */,
+				E0479F2E1D6688F70001C14F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0479F2E1D6688F70001C14F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0479F2D1D6688F70001C14F /* SnapTimer.app */,
+				E0479F411D6688F80001C14F /* SnapTimerTests.xctest */,
+				E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0479F2F1D6688F70001C14F /* SnapTimer */ = {
+			isa = PBXGroup;
+			children = (
+				E0479F301D6688F70001C14F /* AppDelegate.swift */,
+				E0479F321D6688F70001C14F /* ViewController.swift */,
+				E0479F341D6688F70001C14F /* Main.storyboard */,
+				E0479F371D6688F70001C14F /* Assets.xcassets */,
+				E0479F391D6688F70001C14F /* LaunchScreen.storyboard */,
+				E0479F3C1D6688F70001C14F /* Info.plist */,
+				E0479F611D6691C50001C14F /* SnapTimer.swift */,
+			);
+			path = SnapTimer;
+			sourceTree = "<group>";
+		};
+		E0479F441D6688F80001C14F /* SnapTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0479F451D6688F80001C14F /* SnapTimerTests.swift */,
+				E0479F471D6688F80001C14F /* Info.plist */,
+			);
+			path = SnapTimerTests;
+			sourceTree = "<group>";
+		};
+		E0479F4F1D6688F80001C14F /* SnapTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E0479F501D6688F80001C14F /* SnapTimerUITests.swift */,
+				E0479F521D6688F80001C14F /* Info.plist */,
+			);
+			path = SnapTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0479F2C1D6688F70001C14F /* SnapTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0479F551D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimer" */;
+			buildPhases = (
+				E0479F291D6688F70001C14F /* Sources */,
+				E0479F2A1D6688F70001C14F /* Frameworks */,
+				E0479F2B1D6688F70001C14F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapTimer;
+			productName = SnapTimer;
+			productReference = E0479F2D1D6688F70001C14F /* SnapTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0479F401D6688F80001C14F /* SnapTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0479F581D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerTests" */;
+			buildPhases = (
+				E0479F3D1D6688F80001C14F /* Sources */,
+				E0479F3E1D6688F80001C14F /* Frameworks */,
+				E0479F3F1D6688F80001C14F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0479F431D6688F80001C14F /* PBXTargetDependency */,
+			);
+			name = SnapTimerTests;
+			productName = SnapTimerTests;
+			productReference = E0479F411D6688F80001C14F /* SnapTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E0479F4B1D6688F80001C14F /* SnapTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0479F5B1D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerUITests" */;
+			buildPhases = (
+				E0479F481D6688F80001C14F /* Sources */,
+				E0479F491D6688F80001C14F /* Frameworks */,
+				E0479F4A1D6688F80001C14F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0479F4E1D6688F80001C14F /* PBXTargetDependency */,
+			);
+			name = SnapTimerUITests;
+			productName = SnapTimerUITests;
+			productReference = E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0479F251D6688F70001C14F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Andres;
+				TargetAttributes = {
+					E0479F2C1D6688F70001C14F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					E0479F401D6688F80001C14F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E0479F2C1D6688F70001C14F;
+					};
+					E0479F4B1D6688F80001C14F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E0479F2C1D6688F70001C14F;
+					};
+				};
+			};
+			buildConfigurationList = E0479F281D6688F70001C14F /* Build configuration list for PBXProject "SnapTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0479F241D6688F70001C14F;
+			productRefGroup = E0479F2E1D6688F70001C14F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0479F2C1D6688F70001C14F /* SnapTimer */,
+				E0479F401D6688F80001C14F /* SnapTimerTests */,
+				E0479F4B1D6688F80001C14F /* SnapTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0479F2B1D6688F70001C14F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0479F3B1D6688F70001C14F /* LaunchScreen.storyboard in Resources */,
+				E0479F381D6688F70001C14F /* Assets.xcassets in Resources */,
+				E0479F361D6688F70001C14F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F3F1D6688F80001C14F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F4A1D6688F80001C14F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0479F291D6688F70001C14F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0479F331D6688F70001C14F /* ViewController.swift in Sources */,
+				E0479F621D6691C50001C14F /* SnapTimer.swift in Sources */,
+				E0479F311D6688F70001C14F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F3D1D6688F80001C14F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0479F461D6688F80001C14F /* SnapTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0479F481D6688F80001C14F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0479F511D6688F80001C14F /* SnapTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0479F431D6688F80001C14F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0479F2C1D6688F70001C14F /* SnapTimer */;
+			targetProxy = E0479F421D6688F80001C14F /* PBXContainerItemProxy */;
+		};
+		E0479F4E1D6688F80001C14F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0479F2C1D6688F70001C14F /* SnapTimer */;
+			targetProxy = E0479F4D1D6688F80001C14F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0479F341D6688F70001C14F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0479F351D6688F70001C14F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0479F391D6688F70001C14F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0479F3A1D6688F70001C14F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0479F531D6688F80001C14F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0479F541D6688F80001C14F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0479F561D6688F80001C14F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SnapTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E0479F571D6688F80001C14F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SnapTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E0479F591D6688F80001C14F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnapTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapTimer.app/SnapTimer";
+			};
+			name = Debug;
+		};
+		E0479F5A1D6688F80001C14F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnapTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapTimer.app/SnapTimer";
+			};
+			name = Release;
+		};
+		E0479F5C1D6688F80001C14F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SnapTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SnapTimer;
+			};
+			name = Debug;
+		};
+		E0479F5D1D6688F80001C14F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SnapTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SnapTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0479F281D6688F70001C14F /* Build configuration list for PBXProject "SnapTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0479F531D6688F80001C14F /* Debug */,
+				E0479F541D6688F80001C14F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0479F551D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0479F561D6688F80001C14F /* Debug */,
+				E0479F571D6688F80001C14F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E0479F581D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0479F591D6688F80001C14F /* Debug */,
+				E0479F5A1D6688F80001C14F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E0479F5B1D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0479F5C1D6688F80001C14F /* Debug */,
+				E0479F5D1D6688F80001C14F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0479F251D6688F70001C14F /* Project object */;
+}
