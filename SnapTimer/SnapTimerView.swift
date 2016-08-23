@@ -1,5 +1,5 @@
 //
-//  SnapTimer.swift
+//  SnapTimerView.swift
 //  SnapTimer
 //
 //  Created by Andres on 8/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class SnapTimer: UIView {
+@IBDesignable class SnapTimerView: UIView {
 	let pi: CGFloat = CGFloat(M_PI)
 	var snapCenter: CGPoint!
 	var radius: CGFloat!
@@ -19,8 +19,20 @@ import UIKit
 	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor()
 	@IBInspectable var outerBackgroundColor: UIColor = UIColor.whiteColor()
 	
-	@IBInspectable var outerValue: CGFloat = 0
-	@IBInspectable var innerValue: CGFloat = 0
+	@IBInspectable var outerValue: CGFloat = 0 {
+		didSet{
+			if let layer = self.layer as? SnapTimerLayer {
+				layer.outerValue = outerValue
+			}
+		}
+	}
+	@IBInspectable var innerValue: CGFloat = 0 {
+		didSet{
+			if let layer = self.layer as? SnapTimerLayer {
+				layer.innerValue = innerValue
+			}
+		}
+	}
 	
 	private func commonInit() {
 		self.snapCenter = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -28,12 +40,19 @@ import UIKit
 	}
 	
     override func drawRect(rect: CGRect) {
+		
+    }
+	
+	override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
+		super.drawLayer(layer, inContext: ctx)
 		self.commonInit()
 
+		UIGraphicsPushContext(ctx)
 		self.mainCircle()
 		self.innerCompletion()
 		self.outterCompletion()
-    }
+		UIGraphicsPopContext()
+	}
 	
 	private func radianForValue(value: CGFloat) -> CGFloat{
 		var realValue = value < 0 ? 0 : value
@@ -80,5 +99,9 @@ import UIKit
 		self.outerBackgroundColor.setStroke()
 		outterCircle.lineWidth = radius * 0.35
 		outterCircle.stroke()
+	}
+	
+	override class func layerClass() -> AnyClass {
+		return SnapTimerLayer.self
 	}
 }
