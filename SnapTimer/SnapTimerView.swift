@@ -14,6 +14,9 @@ import UIKit
 	var radius: CGFloat!
 	let startAngle = 3/2 * CGFloat(M_PI)
 	let endAngle = 7/2 * CGFloat(M_PI)
+	
+	var centerLayer: SpapTimerCenterLayer! = nil
+	var borderLayer: SnapTimerBorderLayer! = nil
 
 	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor()
 	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor()
@@ -21,15 +24,21 @@ import UIKit
 	
 	@IBInspectable var outerValue: CGFloat = 0 {
 		didSet{
-			if let layer = self.layer as? SnapTimerLayer {
-				layer.outerValue = outerValue
+			if let layer = borderLayer {
+				//				CATransaction.begin()
+				//				CATransaction.setDisableActions(true)
+				layer.startAngle = self.radianForValue(self.outerValue)
+				//				CATransaction.commit()
 			}
 		}
 	}
 	@IBInspectable var innerValue: CGFloat = 0 {
 		didSet{
-			if let layer = self.layer as? SnapTimerLayer {
-				layer.innerValue = innerValue
+			if let layer = centerLayer {
+//				CATransaction.begin()
+//				CATransaction.setDisableActions(true)
+				layer.startAngle = self.radianForValue(self.innerValue)
+//				CATransaction.commit()
 			}
 		}
 	}
@@ -40,19 +49,38 @@ import UIKit
 	}
 	
     override func drawRect(rect: CGRect) {
+		self.commonInit()
+		self.mainCircle()
+
+		centerLayer = SpapTimerCenterLayer()
+		centerLayer.circleColor = self.centerBackgroundColor.CGColor
+		centerLayer.startAngle = self.radianForValue(self.innerValue)
+		centerLayer.contentsScale = UIScreen.mainScreen().scale
+		centerLayer.frame = self.bounds
+		self.layer.addSublayer(centerLayer)
 		
+		borderLayer = SnapTimerBorderLayer()
+		borderLayer.circleColor = self.centerBackgroundColor.CGColor
+		borderLayer.startAngle = self.radianForValue(self.innerValue)
+		borderLayer.contentsScale = UIScreen.mainScreen().scale
+		borderLayer.frame = self.bounds
+		self.layer.addSublayer(borderLayer)
+		
+		
+//		self.innerCompletion()
+//		self.outterCompletion()
     }
 	
-	override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
-		super.drawLayer(layer, inContext: ctx)
-		self.commonInit()
-
-		UIGraphicsPushContext(ctx)
-		self.mainCircle()
-		self.innerCompletion()
-		self.outterCompletion()
-		UIGraphicsPopContext()
-	}
+//	override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
+//		super.drawLayer(layer, inContext: ctx)
+//		self.commonInit()
+//
+//		UIGraphicsPushContext(ctx)
+//		self.mainCircle()
+//		self.innerCompletion()
+//		self.outterCompletion()
+//		UIGraphicsPopContext()
+//	}
 	
 	private func radianForValue(value: CGFloat) -> CGFloat{
 		var realValue = value < 0 ? 0 : value
@@ -101,7 +129,7 @@ import UIKit
 		outterCircle.stroke()
 	}
 	
-	override class func layerClass() -> AnyClass {
-		return SnapTimerLayer.self
-	}
+//	override class func layerClass() -> AnyClass {
+//		return SnapTimerLayer.self
+//	}
 }

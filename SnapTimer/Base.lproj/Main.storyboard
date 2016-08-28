@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="innerValue">
-                                        <real key="value" value="19"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="outerValue">
                                         <real key="value" value="7"/>
@@ -35,7 +35,13 @@
                                     <action selector="changeOuter:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xqu-fZ-ELH"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-wS-kMC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-jb-Efr">
+                                <rect key="frame" x="211" y="112" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-wS-kMC">
                                 <rect key="frame" x="130" y="412" width="204" height="31"/>
                                 <connections>
                                     <action selector="changeInner:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Zs-XW-ltf"/>
@@ -45,6 +51,7 @@
                         <color key="backgroundColor" red="1" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="innerValue" destination="QhY-jb-Efr" id="hOg-MH-ucO"/>
                         <outlet property="snapTimerView" destination="ZG5-ZD-v6B" id="pNt-Mb-xJ8"/>
                     </connections>
                 </viewController>
