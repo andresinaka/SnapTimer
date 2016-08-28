@@ -9,8 +9,7 @@
 import UIKit
 
 class SnapTimerBorderLayer: CALayer {
-	let maxEndAngle = 7/2 * CGFloat(M_PI)
-	
+
 	@NSManaged var circleColor: CGColor
 	@NSManaged var startAngle: CGFloat
 	
@@ -65,8 +64,8 @@ class SnapTimerBorderLayer: CALayer {
 		
 		CGContextBeginPath(ctx)
 		CGContextSetStrokeColorWithColor(ctx, self.circleColor);
-		CGContextSetLineWidth(ctx, radius * 0.35);
-		CGContextAddArc(ctx, center.x, center.y, radius, self.startAngle, maxEndAngle, 0)
+		CGContextSetLineWidth(ctx, radius * 0.45);
+		CGContextAddArc(ctx, center.x, center.y, radius, self.startAngle, SnapTimerView.endAngle, 0)
 		CGContextDrawPath(ctx, .Stroke);
 	}
 }

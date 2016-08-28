@@ -9,6 +9,7 @@
 import UIKit
 
 class SnapTimerMainLayer: CALayer {
+
 	@NSManaged var circleColor: CGColor
 
 	override init(layer: AnyObject) {
