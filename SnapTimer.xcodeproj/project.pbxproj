@@ -15,8 +15,9 @@
 		E0479F461D6688F80001C14F /* SnapTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F451D6688F80001C14F /* SnapTimerTests.swift */; };
 		E0479F511D6688F80001C14F /* SnapTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F501D6688F80001C14F /* SnapTimerUITests.swift */; };
 		E0479F621D6691C50001C14F /* SnapTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F611D6691C50001C14F /* SnapTimerView.swift */; };
-		E0479F661D6D14380001C14F /* SpapTimerCenterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F651D6D14380001C14F /* SpapTimerCenterLayer.swift */; };
+		E0479F661D6D14380001C14F /* SnapTimerCenterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F651D6D14380001C14F /* SnapTimerCenterLayer.swift */; };
 		E0479F681D7358C20001C14F /* SnapTimerBorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */; };
+		E0479F6A1D7367230001C14F /* SnapTimerMainLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F691D7367230001C14F /* SnapTimerMainLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,9 @@
 		E0479F501D6688F80001C14F /* SnapTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerUITests.swift; sourceTree = "<group>"; };
 		E0479F521D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0479F611D6691C50001C14F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerView.swift; sourceTree = "<group>"; };
-		E0479F651D6D14380001C14F /* SpapTimerCenterLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpapTimerCenterLayer.swift; sourceTree = "<group>"; };
+		E0479F651D6D14380001C14F /* SnapTimerCenterLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerCenterLayer.swift; sourceTree = "<group>"; };
 		E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerBorderLayer.swift; sourceTree = "<group>"; };
+		E0479F691D7367230001C14F /* SnapTimerMainLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerMainLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,9 @@
 				E0479F391D6688F70001C14F /* LaunchScreen.storyboard */,
 				E0479F3C1D6688F70001C14F /* Info.plist */,
 				E0479F611D6691C50001C14F /* SnapTimerView.swift */,
-				E0479F651D6D14380001C14F /* SpapTimerCenterLayer.swift */,
+				E0479F651D6D14380001C14F /* SnapTimerCenterLayer.swift */,
 				E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */,
+				E0479F691D7367230001C14F /* SnapTimerMainLayer.swift */,
 			);
 			path = SnapTimer;
 			sourceTree = "<group>";
@@ -267,9 +270,10 @@
 			files = (
 				E0479F331D6688F70001C14F /* ViewController.swift in Sources */,
 				E0479F681D7358C20001C14F /* SnapTimerBorderLayer.swift in Sources */,
+				E0479F6A1D7367230001C14F /* SnapTimerMainLayer.swift in Sources */,
 				E0479F621D6691C50001C14F /* SnapTimerView.swift in Sources */,
 				E0479F311D6688F70001C14F /* AppDelegate.swift in Sources */,
-				E0479F661D6D14380001C14F /* SpapTimerCenterLayer.swift in Sources */,
+				E0479F661D6D14380001C14F /* SnapTimerCenterLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

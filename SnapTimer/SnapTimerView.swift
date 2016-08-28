@@ -12,47 +12,64 @@ import UIKit
 	let pi: CGFloat = CGFloat(M_PI)
 	var snapCenter: CGPoint!
 	var radius: CGFloat!
-	let startAngle = 3/2 * CGFloat(M_PI)
-	let endAngle = 7/2 * CGFloat(M_PI)
+	static let startAngle = 3/2 * CGFloat(M_PI)
+	static let endAngle = 7/2 * CGFloat(M_PI)
 	
-	var centerLayer: SpapTimerCenterLayer! = nil
+	var mainCircleLayer: SnapTimerMainLayer! = nil
+	var centerLayer: SnapTimerCenterLayer! = nil
 	var borderLayer: SnapTimerBorderLayer! = nil
 
-	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor()
-	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor()
-	@IBInspectable var outerBackgroundColor: UIColor = UIColor.whiteColor()
-	
+	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
+		didSet{
+			if let layer = mainCircleLayer {
+				layer.circleColor = self.mainBackgroundColor.CGColor
+			}
+		}
+	}
+	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor() {
+		didSet{
+			if let layer = centerLayer {
+				layer.circleColor = self.centerBackgroundColor.CGColor
+			}
+		}
+	}
+	@IBInspectable var borderBackgroundColor: UIColor = UIColor.whiteColor() {
+		didSet{
+			if let layer = borderLayer {
+				layer.circleColor = borderBackgroundColor.CGColor
+			}
+		}
+	}
 	@IBInspectable var outerValue: CGFloat = 0 {
 		didSet{
 			if let layer = borderLayer {
-				//				CATransaction.begin()
-				//				CATransaction.setDisableActions(true)
 				layer.startAngle = self.radianForValue(self.outerValue)
-				//				CATransaction.commit()
 			}
 		}
 	}
 	@IBInspectable var innerValue: CGFloat = 0 {
 		didSet{
 			if let layer = centerLayer {
-//				CATransaction.begin()
-//				CATransaction.setDisableActions(true)
 				layer.startAngle = self.radianForValue(self.innerValue)
-//				CATransaction.commit()
 			}
 		}
 	}
-	
+
 	private func commonInit() {
 		self.snapCenter = CGPoint(x:bounds.width/2, y: bounds.height/2)
 		self.radius = min(bounds.width, bounds.height) * 0.5
 	}
-	
+
     override func drawRect(rect: CGRect) {
 		self.commonInit()
-		self.mainCircle()
+		
+		mainCircleLayer = SnapTimerMainLayer()
+		mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
+		mainCircleLayer.contentsScale = UIScreen.mainScreen().scale
+		mainCircleLayer.frame = self.bounds
+		self.layer.addSublayer(mainCircleLayer)
 
-		centerLayer = SpapTimerCenterLayer()
+		centerLayer = SnapTimerCenterLayer()
 		centerLayer.circleColor = self.centerBackgroundColor.CGColor
 		centerLayer.startAngle = self.radianForValue(self.innerValue)
 		centerLayer.contentsScale = UIScreen.mainScreen().scale
@@ -60,76 +77,17 @@ import UIKit
 		self.layer.addSublayer(centerLayer)
 		
 		borderLayer = SnapTimerBorderLayer()
-		borderLayer.circleColor = self.centerBackgroundColor.CGColor
+		borderLayer.circleColor = self.borderBackgroundColor.CGColor
 		borderLayer.startAngle = self.radianForValue(self.innerValue)
 		borderLayer.contentsScale = UIScreen.mainScreen().scale
 		borderLayer.frame = self.bounds
 		self.layer.addSublayer(borderLayer)
-		
-		
-//		self.innerCompletion()
-//		self.outterCompletion()
     }
-	
-//	override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
-//		super.drawLayer(layer, inContext: ctx)
-//		self.commonInit()
-//
-//		UIGraphicsPushContext(ctx)
-//		self.mainCircle()
-//		self.innerCompletion()
-//		self.outterCompletion()
-//		UIGraphicsPopContext()
-//	}
-	
+
 	private func radianForValue(value: CGFloat) -> CGFloat{
 		var realValue = value < 0 ? 0 : value
 		realValue = value > 100 ? 100 : value
-		
-		return (realValue * 4/2 * pi / 100) + self.startAngle
+
+		return (realValue * 4/2 * pi / 100) + SnapTimerView.startAngle
 	}
-
-	private func mainCircle() {
-		let bigCircle = UIBezierPath(arcCenter: self.snapCenter,
-		                             radius: self.radius,
-		                             startAngle: self.startAngle,
-		                             endAngle: self.endAngle,
-		                             clockwise: true)
-		
-		self.mainBackgroundColor.setFill()
-		bigCircle.fill()
-	}
-
-	private func innerCompletion() {
-		let startValue = self.radianForValue(self.innerValue)
-		
-		let innerCircle = UIBezierPath(arcCenter: self.snapCenter,
-		                               radius: self.radius / 2,
-		                               startAngle: startValue,
-		                               endAngle: self.endAngle,
-		                               clockwise: true)
-		innerCircle.addLineToPoint(self.snapCenter)
-		innerCircle.closePath()
-
-		self.centerBackgroundColor.setFill()
-		innerCircle.fill()
-	}
-
-	private func outterCompletion() {
-		let startValue = self.radianForValue(self.outerValue)
-
-		let outterCircle = UIBezierPath(arcCenter: self.snapCenter,
-		                                radius: self.radius * 0.75,
-		                                startAngle: startValue,
-		                                endAngle: self.endAngle,
-		                                clockwise: true)
-
-		self.outerBackgroundColor.setStroke()
-		outterCircle.lineWidth = radius * 0.35
-		outterCircle.stroke()
-	}
-	
-//	override class func layerClass() -> AnyClass {
-//		return SnapTimerLayer.self
-//	}
 }

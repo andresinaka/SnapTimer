@@ -1,5 +1,5 @@
 //
-//  SpapTimerCenterLayer.swift
+//  SnapTimerCenterLayer.swift
 //  SnapTimer
 //
 //  Created by Andres on 8/23/16.
@@ -8,23 +8,23 @@
 
 import UIKit
 
-class SpapTimerCenterLayer: CALayer {
-	
+class SnapTimerCenterLayer: CALayer {
+
 	let maxEndAngle = 7/2 * CGFloat(M_PI)
-	
+
 	@NSManaged var circleColor: CGColor
 	@NSManaged var startAngle: CGFloat
 
 	override init(layer: AnyObject) {
 		super.init(layer: layer)
-		if let layer = layer as? SpapTimerCenterLayer {
+		if let layer = layer as? SnapTimerCenterLayer {
 			startAngle = layer.startAngle
 			circleColor = layer.circleColor
 		} else {
 			startAngle = 0
 		}
 	}
-	
+
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
@@ -35,13 +35,10 @@ class SpapTimerCenterLayer: CALayer {
 	
 	func animation(key: String) -> CAAnimation{
 		let animation = CABasicAnimation(keyPath: key)
-		
-		if let pLayer = self.presentationLayer() as? SpapTimerCenterLayer,
+		if let pLayer = self.presentationLayer() as? SnapTimerCenterLayer,
 			value = pLayer.valueForKey(key) {
 			animation.fromValue = value
 		}
-		puts ("Disabled: \(CATransaction.disableActions())")
-		puts ("Duration: \(CATransaction.animationDuration())")
 		animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
 		animation.duration = 0.5
 		return animation
@@ -73,6 +70,5 @@ class SpapTimerCenterLayer: CALayer {
 
 		CGContextSetFillColorWithColor(ctx, self.circleColor);
 		CGContextDrawPath(ctx, .FillStroke);
-
 	}
 }

@@ -21,6 +21,7 @@ class SnapTimerBorderLayer: CALayer {
 			circleColor = layer.circleColor
 		} else {
 			startAngle = 0
+			circleColor = UIColor.whiteColor().CGColor
 		}
 	}
 	
@@ -39,8 +40,6 @@ class SnapTimerBorderLayer: CALayer {
 			value = pLayer.valueForKey(key) {
 			animation.fromValue = value
 		}
-		puts ("Disabled: \(CATransaction.disableActions())")
-		puts ("Duration: \(CATransaction.animationDuration())")
 		animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
 		animation.duration = 0.5
 		return animation
@@ -65,7 +64,7 @@ class SnapTimerBorderLayer: CALayer {
 		let radius = (min(bounds.width, bounds.height) * 0.5) * 0.75
 		
 		CGContextBeginPath(ctx)
-		CGContextSetStrokeColorWithColor(ctx, UIColor.whiteColor().CGColor);
+		CGContextSetStrokeColorWithColor(ctx, self.circleColor);
 		CGContextSetLineWidth(ctx, radius * 0.35);
 		CGContextAddArc(ctx, center.x, center.y, radius, self.startAngle, maxEndAngle, 0)
 		CGContextDrawPath(ctx, .Stroke);

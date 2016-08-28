@@ -28,6 +28,11 @@ class ViewController: UIViewController {
 		}
 	}
 
+	@IBAction func changeColor(sender: AnyObject) {
+		self.snapTimerView.centerBackgroundColor = UIColor.blueColor()
+		self.snapTimerView.borderBackgroundColor = UIColor.purpleColor()
+	}
+	
 	@IBAction func changeInner(sender: UISlider) {
 		self.snapTimerView.innerValue = CGFloat(sender.value)
 		self.innerValue.text = String(sender.value)
