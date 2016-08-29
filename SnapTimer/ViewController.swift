@@ -16,7 +16,6 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		self.snapTimerView.innerValue = 0
-
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
 			
 			UIView.animateWithDuration(10, delay: 0, options: [], animations: {

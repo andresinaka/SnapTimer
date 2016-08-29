@@ -12,6 +12,8 @@ class SnapTimerBorderLayer: CALayer {
 
 	@NSManaged var circleColor: CGColor
 	@NSManaged var startAngle: CGFloat
+	@NSManaged var radius: CGFloat
+	@NSManaged var width: CGFloat
 	
 	override init(layer: AnyObject) {
 		super.init(layer: layer)
@@ -52,7 +54,8 @@ class SnapTimerBorderLayer: CALayer {
 	}
 	
 	override class func needsDisplayForKey(key: String) -> Bool{
-		if key == "startAngle" || key == "circleColor" {
+		if key == "startAngle" || key == "circleColor" || key == "radius" ||
+			key == "borderWidth" {
 			return true;
 		}
 		return super.needsDisplayForKey(key)
@@ -60,12 +63,11 @@ class SnapTimerBorderLayer: CALayer {
 	
 	override func drawInContext(ctx: CGContext) {
 		let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
-		let radius = (min(bounds.width, bounds.height) * 0.5) * 0.75
-		
+
 		CGContextBeginPath(ctx)
 		CGContextSetStrokeColorWithColor(ctx, self.circleColor);
-		CGContextSetLineWidth(ctx, radius * 0.45);
-		CGContextAddArc(ctx, center.x, center.y, radius, self.startAngle, SnapTimerView.endAngle, 0)
+		CGContextSetLineWidth(ctx, self.width);
+		CGContextAddArc(ctx, center.x, center.y, self.radius, self.startAngle, SnapTimerView.endAngle, 0)
 		CGContextDrawPath(ctx, .Stroke);
 	}
 }

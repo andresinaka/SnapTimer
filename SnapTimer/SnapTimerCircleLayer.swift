@@ -1,28 +1,29 @@
 //
-//  SnapTimerCenterLayer.swift
+//  SnapTimerCircleLayer.swift
 //  SnapTimer
 //
-//  Created by Andres on 8/23/16.
+//  Created by Andres on 8/29/16.
 //  Copyright © 2016 Andres. All rights reserved.
 //
 
 import UIKit
 
-class SnapTimerCenterLayer: CALayer {
-
+class SnapTimerCircleLayer: CALayer {
 	@NSManaged var circleColor: CGColor
 	@NSManaged var startAngle: CGFloat
-
+	@NSManaged var radius: CGFloat
+	
 	override init(layer: AnyObject) {
 		super.init(layer: layer)
-		if let layer = layer as? SnapTimerCenterLayer {
+		if let layer = layer as? SnapTimerCircleLayer {
 			startAngle = layer.startAngle
 			circleColor = layer.circleColor
+			radius = layer.radius
 		} else {
 			startAngle = 0
 		}
 	}
-
+	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
@@ -33,7 +34,7 @@ class SnapTimerCenterLayer: CALayer {
 	
 	func animation(key: String) -> CAAnimation{
 		let animation = CABasicAnimation(keyPath: key)
-		if let pLayer = self.presentationLayer() as? SnapTimerCenterLayer,
+		if let pLayer = self.presentationLayer() as? SnapTimerCircleLayer,
 			value = pLayer.valueForKey(key) {
 			animation.fromValue = value
 		}
@@ -48,9 +49,9 @@ class SnapTimerCenterLayer: CALayer {
 		}
 		return super.actionForKey(key)
 	}
-
+	
 	override class func needsDisplayForKey(key: String) -> Bool{
-		if key == "startAngle" || key == "circleColor" {
+		if key == "startAngle" || key == "circleColor" || key == "radius" {
 			return true;
 		}
 		return super.needsDisplayForKey(key)
@@ -58,14 +59,13 @@ class SnapTimerCenterLayer: CALayer {
 	
 	override func drawInContext(ctx: CGContext) {
 		let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
-		let radius = min(bounds.width, bounds.height) * 0.5
-
+		
 		CGContextBeginPath(ctx)
 		CGContextSetLineWidth(ctx, 0);
-
+		
 		CGContextMoveToPoint(ctx, center.x, center.y)
-		CGContextAddArc(ctx, center.x, center.y, radius/2, self.startAngle, SnapTimerView.endAngle, 0)
-
+		CGContextAddArc(ctx, center.x, center.y, self.radius, self.startAngle, SnapTimerView.endAngle, 0)
+		
 		CGContextSetFillColorWithColor(ctx, self.circleColor);
 		CGContextDrawPath(ctx, .FillStroke);
 	}

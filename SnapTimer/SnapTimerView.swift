@@ -12,8 +12,8 @@ import UIKit
 	static let startAngle = 3/2 * CGFloat(M_PI)
 	static let endAngle = 7/2 * CGFloat(M_PI)
 
-	var mainCircleLayer: SnapTimerMainLayer!
-	var centerLayer: SnapTimerCenterLayer!
+	var mainCircleLayer: SnapTimerCircleLayer!
+	var centerLayer: SnapTimerCircleLayer!
 	var borderLayer: SnapTimerBorderLayer!
 
 	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
@@ -57,15 +57,19 @@ import UIKit
 	}
 
 	private func commonInit() {
-		self.mainCircleLayer = SnapTimerMainLayer()
+		let radius = min(bounds.width, bounds.height) * 0.5
+
+		self.mainCircleLayer = SnapTimerCircleLayer()
 		self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
+		self.mainCircleLayer.radius = radius
 		self.mainCircleLayer.contentsScale = UIScreen.mainScreen().scale
 		self.mainCircleLayer.frame = self.bounds
 		self.layer.addSublayer(mainCircleLayer)
 		
-		self.centerLayer = SnapTimerCenterLayer()
+		self.centerLayer = SnapTimerCircleLayer()
 		self.centerLayer.circleColor = self.centerBackgroundColor.CGColor
 		self.centerLayer.startAngle = self.radianForValue(self.innerValue)
+		self.centerLayer.radius = radius/2
 		self.centerLayer.contentsScale = UIScreen.mainScreen().scale
 		self.centerLayer.frame = self.bounds
 		self.layer.addSublayer(centerLayer)
@@ -73,6 +77,8 @@ import UIKit
 		self.borderLayer = SnapTimerBorderLayer()
 		self.borderLayer.circleColor = self.borderBackgroundColor.CGColor
 		self.borderLayer.startAngle = self.radianForValue(self.outerValue)
+		self.borderLayer.radius = radius * 0.75
+		self.borderLayer.width = radius * 0.33
 		self.borderLayer.contentsScale = UIScreen.mainScreen().scale
 		self.borderLayer.frame = self.bounds
 		self.layer.addSublayer(borderLayer)
