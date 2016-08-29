@@ -17,54 +17,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG5-ZD-v6B" customClass="SnapTimerView" customModule="SnapTimer" customModuleProvider="target">
-                                <rect key="frame" x="132" y="186" width="200" height="200"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="innerValue">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="outerValue">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-34-v4y">
-                                <rect key="frame" x="130" y="461" width="204" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-34-v4y">
+                                <rect key="frame" x="198" y="458" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Muo-xx-rss"/>
+                                    <constraint firstAttribute="height" constant="30" id="cgf-RX-Uqx"/>
+                                </constraints>
                                 <connections>
                                     <action selector="changeOuter:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xqu-fZ-ELH"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-jb-Efr">
-                                <rect key="frame" x="211" y="112" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOA-qc-MNo">
-                                <rect key="frame" x="185" y="511" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOA-qc-MNo">
+                                <rect key="frame" x="253" y="511" width="94" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="Ufy-AK-EZm"/>
+                                    <constraint firstAttribute="height" constant="30" id="go5-ns-Xa8"/>
+                                </constraints>
                                 <state key="normal" title="Change Color"/>
                                 <connections>
                                     <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfr-ha-K88"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-wS-kMC">
-                                <rect key="frame" x="130" y="412" width="204" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-wS-kMC">
+                                <rect key="frame" x="198" y="402" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="o20-7u-3WO"/>
+                                    <constraint firstAttribute="width" constant="200" id="upJ-L3-pMn"/>
+                                </constraints>
                                 <connections>
                                     <action selector="changeInner:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Zs-XW-ltf"/>
                                 </connections>
                             </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-0k-Kt0" customClass="SnapTimerView" customModule="SnapTimer">
+                                <rect key="frame" x="225.5" y="224.5" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="k4n-S1-aEz"/>
+                                    <constraint firstAttribute="height" constant="150" id="qOg-wQ-XBi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerValue">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerValue">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-jb-Efr">
+                                <rect key="frame" x="279" y="177" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2rr-hw-wKP"/>
+                                    <constraint firstAttribute="width" constant="42" id="hQU-fE-0fj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mdh-wS-kMC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0T1-Hb-VPm"/>
+                            <constraint firstItem="Vsg-34-v4y" firstAttribute="top" secondItem="Mdh-wS-kMC" secondAttribute="bottom" constant="26" id="1Nd-Bz-4lf"/>
+                            <constraint firstItem="Vsg-34-v4y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="90F-C0-SWr"/>
+                            <constraint firstItem="Mdh-wS-kMC" firstAttribute="top" secondItem="ifG-0k-Kt0" secondAttribute="bottom" constant="27.5" id="B3j-iD-WTN"/>
+                            <constraint firstItem="QhY-jb-Efr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="En2-Jh-3je"/>
+                            <constraint firstItem="VOA-qc-MNo" firstAttribute="top" secondItem="Vsg-34-v4y" secondAttribute="bottom" constant="23" id="VDI-7z-ENq"/>
+                            <constraint firstItem="ifG-0k-Kt0" firstAttribute="top" secondItem="QhY-jb-Efr" secondAttribute="bottom" constant="26.5" id="aLc-nO-KIp"/>
+                            <constraint firstItem="ifG-0k-Kt0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHe-Uo-PVi"/>
+                            <constraint firstItem="VOA-qc-MNo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iyH-o0-P4z"/>
+                            <constraint firstItem="ifG-0k-Kt0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r1w-xU-UTF"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="innerValue" destination="QhY-jb-Efr" id="hOg-MH-ucO"/>
-                        <outlet property="snapTimerView" destination="ZG5-ZD-v6B" id="pNt-Mb-xJ8"/>
+                        <outlet property="snapTimerView" destination="ifG-0k-Kt0" id="mf8-mi-xm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="300"/>
+            <point key="canvasLocation" x="325" y="312"/>
         </scene>
     </scenes>
 </document>

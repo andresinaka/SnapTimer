@@ -18,7 +18,7 @@ import UIKit
 
 	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
 		didSet{
-			self.mainCircleLayer?.circleColor = self.mainBackgroundColor.CGColor
+			self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
 		}
 	}
 	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor() {
@@ -33,12 +33,12 @@ import UIKit
 	}
 	@IBInspectable var outerValue: CGFloat = 0 {
 		didSet{
-			self.borderLayer?.startAngle = self.radianForValue(self.outerValue)
+			self.borderLayer.startAngle = self.radianForValue(self.outerValue)
 		}
 	}
 	@IBInspectable var innerValue: CGFloat = 0 {
 		didSet{
-			self.centerLayer?.startAngle = self.radianForValue(self.innerValue)
+			self.centerLayer.startAngle = self.radianForValue(self.innerValue)
 		}
 	}
 
@@ -49,6 +49,10 @@ import UIKit
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		commonInit()
+	}
+
+	override func prepareForInterfaceBuilder() {
 		commonInit()
 	}
 
@@ -68,7 +72,7 @@ import UIKit
 		
 		self.borderLayer = SnapTimerBorderLayer()
 		self.borderLayer.circleColor = self.borderBackgroundColor.CGColor
-		self.borderLayer.startAngle = self.radianForValue(self.innerValue)
+		self.borderLayer.startAngle = self.radianForValue(self.outerValue)
 		self.borderLayer.contentsScale = UIScreen.mainScreen().scale
 		self.borderLayer.frame = self.bounds
 		self.layer.addSublayer(borderLayer)
