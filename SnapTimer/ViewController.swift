@@ -12,24 +12,42 @@ class ViewController: UIViewController {
 	@IBOutlet weak var snapTimerView: SnapTimerView!
 	@IBOutlet weak var innerValue: UILabel!
 
+	@IBAction func animatedAction(sender: AnyObject) {
+//		self.snapTimerView.outerValue = 0
+//		print("\(NSDate())")
+		self.snapTimerView.animateOuterToValue(50, duration: 10) {
+			puts("Termino inner!")
+			puts("\(NSThread.isMainThread())")
+			print("\(NSDate())")
+		}
+		
+//		self.snapTimerView.innerValue = 50
+		self.snapTimerView.animateInnerToValue(100, duration: 10) {
+			puts("Termino outer!")
+			puts("\(NSThread.isMainThread())")
+			print("\(NSDate())")
+		}
+	}
+	
+	@IBAction func notAnimatedAction(sender: AnyObject) {
+		self.snapTimerView.outerValue = 0
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.snapTimerView.innerValue = 0
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
-			
-			UIView.animateWithDuration(10, delay: 0, options: [], animations: {
-				CATransaction.begin()
-				CATransaction.setAnimationDuration(10)
-				self.snapTimerView.innerValue = 10
-				}, completion: nil)
-				CATransaction.commit()
-		}
+//		UIView.animateWithDuration(10, delay: 0, options: [], animations: {
+//				self.snapTimerView.innerValue = 10
+//			}, completion: nil)
+		
+		
 	}
 
 	@IBAction func changeColor(sender: AnyObject) {
-		self.snapTimerView.centerBackgroundColor = UIColor.blueColor()
-		self.snapTimerView.borderBackgroundColor = UIColor.purpleColor()
+//		self.snapTimerView.centerBackgroundColor = UIColor.blueColor()
+//		self.snapTimerView.borderBackgroundColor = UIColor.purpleColor()
+		self.snapTimerView.innerValue = 100
 	}
 	
 	@IBAction func changeInner(sender: UISlider) {

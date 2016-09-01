@@ -14,7 +14,7 @@ class SnapTimerBorderLayer: CALayer {
 	@NSManaged var startAngle: CGFloat
 	@NSManaged var radius: CGFloat
 	@NSManaged var width: CGFloat
-	
+
 	override init(layer: AnyObject) {
 		super.init(layer: layer)
 		if let layer = layer as? SnapTimerBorderLayer {
@@ -25,34 +25,37 @@ class SnapTimerBorderLayer: CALayer {
 			circleColor = UIColor.whiteColor().CGColor
 		}
 	}
-	
+
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
-	
+
 	override init() {
 		super.init()
 	}
-	
+
 	func animation(key: String) -> CAAnimation{
 		let animation = CABasicAnimation(keyPath: key)
-		
+
 		if let pLayer = self.presentationLayer() as? SnapTimerBorderLayer,
 			value = pLayer.valueForKey(key) {
 			animation.fromValue = value
 		}
-		animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-		animation.duration = 0.5
+
+		let animationTiming = CATransaction.animationTimingFunction() ?? CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+		let duration = CATransaction.animationDuration() ?? 0
+		animation.timingFunction = animationTiming
+		animation.duration = duration
 		return animation
 	}
-	
+
 	override func actionForKey(key: String) -> CAAction? {
 		if key == "startAngle" {
 			return self.animation(key)
 		}
 		return super.actionForKey(key)
 	}
-	
+
 	override class func needsDisplayForKey(key: String) -> Bool{
 		if key == "startAngle" || key == "circleColor" || key == "radius" ||
 			key == "borderWidth" {
@@ -60,7 +63,7 @@ class SnapTimerBorderLayer: CALayer {
 		}
 		return super.needsDisplayForKey(key)
 	}
-	
+
 	override func drawInContext(ctx: CGContext) {
 		let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
 

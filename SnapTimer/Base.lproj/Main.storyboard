@@ -57,13 +57,27 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="outerValue">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="innerValue">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8M-4F-goO">
+                                <rect key="frame" x="150" y="77" width="91" height="30"/>
+                                <state key="normal" title="No animation"/>
+                                <connections>
+                                    <action selector="notAnimatedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiP-No-SO0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-au-jEY">
+                                <rect key="frame" x="328" y="77" width="66" height="30"/>
+                                <state key="normal" title="Animated"/>
+                                <connections>
+                                    <action selector="animatedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRx-B2-Ibg"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-jb-Efr">
                                 <rect key="frame" x="279" y="177" width="42" height="21"/>
                                 <constraints>
