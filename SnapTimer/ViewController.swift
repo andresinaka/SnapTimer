@@ -12,52 +12,40 @@ class ViewController: UIViewController {
 	@IBOutlet weak var snapTimerView: SnapTimerView!
 	@IBOutlet weak var innerValue: UILabel!
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+
 	@IBAction func animatedAction(sender: AnyObject) {
-//		self.snapTimerView.outerValue = 0
-//		print("\(NSDate())")
-		self.snapTimerView.animateOuterToValue(50, duration: 10) {
-			puts("Termino inner!")
-			puts("\(NSThread.isMainThread())")
-			print("\(NSDate())")
-		}
-		
-//		self.snapTimerView.innerValue = 50
-		self.snapTimerView.animateInnerToValue(100, duration: 10) {
+
+		self.snapTimerView.outerValue = 0
+		self.snapTimerView.animateOuterToValue(50, duration: 30) {
 			puts("Termino outer!")
-			puts("\(NSThread.isMainThread())")
-			print("\(NSDate())")
+		}
+
+		self.snapTimerView.innerValue = 50
+		self.snapTimerView.animateInnerToValue(100, duration: 30) { 
+			puts("Termino outer!")
 		}
 	}
 	
 	@IBAction func notAnimatedAction(sender: AnyObject) {
 		self.snapTimerView.outerValue = 0
 	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		self.snapTimerView.innerValue = 0
-//		UIView.animateWithDuration(10, delay: 0, options: [], animations: {
-//				self.snapTimerView.innerValue = 10
-//			}, completion: nil)
-		
-		
-	}
 
 	@IBAction func changeColor(sender: AnyObject) {
-//		self.snapTimerView.centerBackgroundColor = UIColor.blueColor()
-//		self.snapTimerView.borderBackgroundColor = UIColor.purpleColor()
-		self.snapTimerView.innerValue = 100
+		self.snapTimerView.centerBackgroundColor = UIColor.yellowColor()
+		self.snapTimerView.borderBackgroundColor = UIColor.orangeColor()
+		self.snapTimerView.mainBackgroundColor = UIColor.blueColor()
 	}
-	
+
 	@IBAction func changeInner(sender: UISlider) {
-		self.snapTimerView.innerValue = CGFloat(sender.value)
+		self.snapTimerView.animateInnerValue(CGFloat(sender.value))
 		self.innerValue.text = String(sender.value)
 	}
-	
+
 	@IBAction func changeOuter(sender: UISlider) {
-		self.snapTimerView.outerValue = CGFloat(sender.value)
+		self.snapTimerView.animateOuterValue(CGFloat(sender.value))
 	}
-	
 }
 
