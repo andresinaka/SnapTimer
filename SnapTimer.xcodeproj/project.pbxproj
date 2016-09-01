@@ -50,9 +50,9 @@
 		E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0479F501D6688F80001C14F /* SnapTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerUITests.swift; sourceTree = "<group>"; };
 		E0479F521D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0479F611D6691C50001C14F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerView.swift; sourceTree = "<group>"; };
-		E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerBorderLayer.swift; sourceTree = "<group>"; };
-		E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerCircleLayer.swift; sourceTree = "<group>"; };
+		E0479F611D6691C50001C14F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerView.swift; path = SnapTimerSample/SnapTimerView.swift; sourceTree = SOURCE_ROOT; };
+		E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerBorderLayer.swift; path = SnapTimerSample/SnapTimerBorderLayer.swift; sourceTree = SOURCE_ROOT; };
+		E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerCircleLayer.swift; path = SnapTimerSample/SnapTimerCircleLayer.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,8 @@
 		E0479F241D6688F70001C14F = {
 			isa = PBXGroup;
 			children = (
-				E0479F2F1D6688F70001C14F /* SnapTimer */,
+				E06FF6051D77CA3C00F6C1A1 /* SnapTimer */,
+				E0479F2F1D6688F70001C14F /* SnapTimerSample */,
 				E0479F441D6688F80001C14F /* SnapTimerTests */,
 				E0479F4F1D6688F80001C14F /* SnapTimerUITests */,
 				E0479F2E1D6688F70001C14F /* Products */,
@@ -100,7 +101,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E0479F2F1D6688F70001C14F /* SnapTimer */ = {
+		E0479F2F1D6688F70001C14F /* SnapTimerSample */ = {
 			isa = PBXGroup;
 			children = (
 				E0479F301D6688F70001C14F /* AppDelegate.swift */,
@@ -109,11 +110,8 @@
 				E0479F371D6688F70001C14F /* Assets.xcassets */,
 				E0479F391D6688F70001C14F /* LaunchScreen.storyboard */,
 				E0479F3C1D6688F70001C14F /* Info.plist */,
-				E0479F611D6691C50001C14F /* SnapTimerView.swift */,
-				E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */,
-				E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */,
 			);
-			path = SnapTimer;
+			path = SnapTimerSample;
 			sourceTree = "<group>";
 		};
 		E0479F441D6688F80001C14F /* SnapTimerTests */ = {
@@ -132,6 +130,16 @@
 				E0479F521D6688F80001C14F /* Info.plist */,
 			);
 			path = SnapTimerUITests;
+			sourceTree = "<group>";
+		};
+		E06FF6051D77CA3C00F6C1A1 /* SnapTimer */ = {
+			isa = PBXGroup;
+			children = (
+				E0479F611D6691C50001C14F /* SnapTimerView.swift */,
+				E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */,
+				E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */,
+			);
+			path = SnapTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SnapTimer/Info.plist;
+				INFOPLIST_FILE = SnapTimerSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SnapTimer/Info.plist;
+				INFOPLIST_FILE = SnapTimerSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
