@@ -17,25 +17,25 @@ import UIKit
 	var borderLayer: SnapTimerBorderLayer!
 
 	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
-		didSet{
+		didSet {
 			self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
 		}
 	}
 	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor() {
-		didSet{
+		didSet {
 			self.centerLayer.circleColor = self.centerBackgroundColor.CGColor
 		}
 	}
 	@IBInspectable var borderBackgroundColor: UIColor = UIColor.whiteColor() {
-		didSet{
+		didSet {
 			self.borderLayer.circleColor = borderBackgroundColor.CGColor
 		}
 	}
-	
+
 	private var outerProperty: CGFloat = 0
 	private var innerProperty: CGFloat = 0
-	
-	@IBInspectable var outerValue:CGFloat {
+
+	@IBInspectable var outerValue: CGFloat {
 		set {
 			CATransaction.begin()
 			CATransaction.setDisableActions(true)
@@ -47,25 +47,25 @@ import UIKit
 			return self.outerProperty
 		}
 	}
-	
-	@IBInspectable var innerValue:CGFloat {
+
+	@IBInspectable var innerValue: CGFloat {
 		set {
 			CATransaction.begin()
 			CATransaction.setDisableActions(true)
 			self.animateInnerValue(newValue)
 			CATransaction.commit()
 		}
-		
+
 		get {
 			return self.outerProperty
 		}
 	}
-	
+
 	public func animateOuterValue(value: CGFloat) {
 		self.outerProperty = value
 		self.borderLayer.startAngle = self.radianForValue(self.outerProperty)
 	}
-	
+
 	public func animateInnerValue(value: CGFloat) {
 		self.innerProperty = value
 		self.centerLayer.startAngle = self.radianForValue(self.innerProperty)
@@ -130,7 +130,7 @@ import UIKit
 		CATransaction.commit()
 	}
 
-	private func radianForValue(value: CGFloat) -> CGFloat{
+	private func radianForValue(value: CGFloat) -> CGFloat {
 		var realValue = value < 0 ? 0 : value
 		realValue = value > 100 ? 100 : value
 

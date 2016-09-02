@@ -21,14 +21,15 @@ class ViewController: UIViewController {
 		self.snapTimerView.outerValue = 0
 		self.snapTimerView.animateOuterToValue(50, duration: 30) {
 			puts("Termino outer!")
+			puts("\(self.snapTimerView.outerValue)")
 		}
 
 		self.snapTimerView.innerValue = 50
-		self.snapTimerView.animateInnerToValue(100, duration: 30) { 
+		self.snapTimerView.animateInnerToValue(100, duration: 30) {
 			puts("Termino outer!")
 		}
 	}
-	
+
 	@IBAction func notAnimatedAction(sender: AnyObject) {
 		self.snapTimerView.outerValue = 0
 	}
@@ -48,4 +49,3 @@ class ViewController: UIViewController {
 		self.snapTimerView.animateOuterValue(CGFloat(sender.value))
 	}
 }
-
