@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="width" constant="200" id="Muo-xx-rss"/>
                                     <constraint firstAttribute="height" constant="30" id="cgf-RX-Uqx"/>
                                 </constraints>
+                                <color key="thumbTintColor" red="0.78823529411764703" green="0.0" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="changeOuter:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xqu-fZ-ELH"/>
                                 </connections>
@@ -44,12 +45,14 @@
                                     <constraint firstAttribute="height" constant="30" id="o20-7u-3WO"/>
                                     <constraint firstAttribute="width" constant="200" id="upJ-L3-pMn"/>
                                 </constraints>
+                                <color key="minimumTrackTintColor" red="0.6470588235294118" green="0.93725490196078431" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.78823529411764703" green="0.0" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="changeInner:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Zs-XW-ltf"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-0k-Kt0" customClass="SnapTimerView" customModule="SnapTimer">
-                                <rect key="frame" x="225.5" y="224.5" width="150" height="150"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-0k-Kt0" customClass="SnapTimerView" customModule="SnapTimer">
+                                <rect key="frame" x="226" y="225" width="150" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="k4n-S1-aEz"/>
@@ -89,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mdh-wS-kMC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0T1-Hb-VPm"/>
                             <constraint firstItem="Vsg-34-v4y" firstAttribute="top" secondItem="Mdh-wS-kMC" secondAttribute="bottom" constant="26" id="1Nd-Bz-4lf"/>
