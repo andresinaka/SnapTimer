@@ -15,7 +15,7 @@ import UIKit
 	internal var mainCircleLayer: SnapTimerCircleLayer!
 	internal var centerLayer: SnapTimerCircleLayer!
 	internal var borderLayer: SnapTimerBorderLayer!
-	
+
 	internal var animationsPaused = false
 
 	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
@@ -130,7 +130,7 @@ import UIKit
 		self.animateInnerValue(value)
 		CATransaction.commit()
 	}
-	
+
 	public func pauseAnimation() {
 		self.animationsPaused = true
 
@@ -138,7 +138,7 @@ import UIKit
 		self.layer.speed = 0.0
 		self.layer.timeOffset = pausedTime
 	}
-	
+
 	public func resumeAnimation() {
 		if !self.animationsPaused {
 			return
@@ -146,11 +146,11 @@ import UIKit
 		self.animationsPaused = false
 
 		let pausedTime = self.layer.timeOffset
-		self.layer.speed = 1.0;
-		self.layer.timeOffset = 0.0;
-		self.layer.beginTime = 0.0;
+		self.layer.speed = 1.0
+		self.layer.timeOffset = 0.0
+		self.layer.beginTime = 0.0
 		let timeSincePause = self.layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
-		self.layer.beginTime = timeSincePause;
+		self.layer.beginTime = timeSincePause
 	}
 
 	internal class func sanitizeValue(value: CGFloat) -> CGFloat {

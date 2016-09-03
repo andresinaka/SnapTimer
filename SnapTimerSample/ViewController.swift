@@ -37,11 +37,11 @@ class ViewController: UIViewController {
 	@IBAction func pauseAnimations(sender: AnyObject) {
 		self.snapTimerView.pauseAnimation()
 	}
-	
+
 	@IBAction func resumeAnimations(sender: AnyObject) {
 		self.snapTimerView.resumeAnimation()
 	}
-	
+
 	@IBAction func changeColor(sender: AnyObject) {
 		self.snapTimerView.centerBackgroundColor = UIColor.yellowColor()
 		self.snapTimerView.borderBackgroundColor = UIColor.orangeColor()
