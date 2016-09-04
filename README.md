@@ -1,4 +1,4 @@
-![SnapTimer](snapTimer-logo.png)
+![SnapTimer](images/snapTimer-logo.png)
 
 # SnapTimer
 
@@ -10,6 +10,7 @@ SnapTimer is a custom UIView that behaves exactly the same as the one on Snapcha
 
 - Two different timers, 'outer' and 'inner'.
 - Independent animations for each of the timers.
+- Customizable colors.
 - Completion handlers.
 - Fully Swift.
 
@@ -17,7 +18,7 @@ SnapTimer is a custom UIView that behaves exactly the same as the one on Snapcha
 
 > A picture is worth a thousand words
 
-![samples](sample-timers.png)
+![samples](images/sample-timers.png)
 
 # Installation
 
@@ -46,13 +47,59 @@ And you are all set!
 1. Add a `UIView` to your Storyboard.
 2. Select the view, go to the `Identity Inspector` and set the class to `SnapTimerView`
  
-    ![identity-inspector](identity-inspector.png)
+    ![identity-inspector](images/identity-inspector.png)
 
 3. Create an `@IBOutlet` in your view controller and that's it.
  
     `SnapTimerView` implements `@IBDesignable` so the view should automatically render in your Interface Builder. Also it implements `@IBInspectable` for the view properties:
 
-   ![properties](properties.png)
+   ![properties](images/properties.png)
 
 4. That's it!
 
+### Setting inner and outer values
+
+**innerValue** and **outerValue** ranges go from 0 to 100.
+
+* To set values without animations you just have to:
+
+    ```swift
+self.snapTimerView.outerValue = 25
+self.snapTimerView.innerValue = 50
+```
+   ![ej1](images/ej1.gif)
+
+* To animate values:
+
+    ```swift
+self.snapTimerView.animateOuterValue(50)
+self.snapTimerView.animateInnerValue(25)
+```
+   ![ej1](images/ej2.gif)
+
+* To animate values setting the time and a completion handler:
+
+  ```swift
+  self.snapTimerView.animateOuterToValue(50, duration: 30) {
+	  puts("Done!")
+  }
+ 
+  self.snapTimerView.animateInnerToValue(100, duration: 30) {
+	  puts("Done!")
+  }
+  ```
+ 
+### Pausing and resuming animations:
+
+if your app goes to background or the Notifications/Control center are opened you may want to pause the animations, to do that SnapTimer has two handy methods:
+
+```swift
+self.snapTimerView.resumeAnimation()
+self.snapTimerView.pauseAnimation()
+```
+
+# Check the sample project!
+
+
+# Todo 
+* Swift 2.3 and 3 👌
