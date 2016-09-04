@@ -4,7 +4,7 @@
 
 SnapTimer is a custom UIView that behaves exactly the same as the one on Snapchat's stories. 
 
-[![Build Status](https://travis-ci.org/andresinaka/SnapTimer.svg)](https://travis-ci.org/andresinaka/SnapTimer) [![codecov.io](https://codecov.io/github/andresinaka/SnapTimer/badge.svg?branch=master)](https://codecov.io/github/andresinaka/SnapTimer?branch=master)
+[![Build Status](https://travis-ci.org/andresinaka/SnapTimer.svg?branch=master)](https://travis-ci.org/andresinaka/SnapTimer) [![codecov.io](https://codecov.io/github/andresinaka/SnapTimer/badge.svg?branch=master)](https://codecov.io/github/andresinaka/SnapTimer?branch=master)
 
 ## Features
 

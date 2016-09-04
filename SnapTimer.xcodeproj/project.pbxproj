@@ -26,13 +26,6 @@
 			remoteGlobalIDString = E0479F2C1D6688F70001C14F;
 			remoteInfo = SnapTimer;
 		};
-		E0479F4D1D6688F80001C14F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E0479F251D6688F70001C14F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E0479F2C1D6688F70001C14F;
-			remoteInfo = SnapTimer;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +39,6 @@
 		E0479F411D6688F80001C14F /* SnapTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0479F451D6688F80001C14F /* SnapTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerTests.swift; sourceTree = "<group>"; };
 		E0479F471D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0479F611D6691C50001C14F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerView.swift; path = SnapTimerSample/SnapTimerView.swift; sourceTree = SOURCE_ROOT; };
 		E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerBorderLayer.swift; path = SnapTimerSample/SnapTimerBorderLayer.swift; sourceTree = SOURCE_ROOT; };
 		E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerCircleLayer.swift; path = SnapTimerSample/SnapTimerCircleLayer.swift; sourceTree = SOURCE_ROOT; };
@@ -61,13 +53,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E0479F3E1D6688F80001C14F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0479F491D6688F80001C14F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +77,6 @@
 			children = (
 				E0479F2D1D6688F70001C14F /* SnapTimer.app */,
 				E0479F411D6688F80001C14F /* SnapTimerTests.xctest */,
-				E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,24 +151,6 @@
 			productReference = E0479F411D6688F80001C14F /* SnapTimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E0479F4B1D6688F80001C14F /* SnapTimerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E0479F5B1D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerUITests" */;
-			buildPhases = (
-				E0479F481D6688F80001C14F /* Sources */,
-				E0479F491D6688F80001C14F /* Frameworks */,
-				E0479F4A1D6688F80001C14F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0479F4E1D6688F80001C14F /* PBXTargetDependency */,
-			);
-			name = SnapTimerUITests;
-			productName = SnapTimerUITests;
-			productReference = E0479F4C1D6688F80001C14F /* SnapTimerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +166,6 @@
 						DevelopmentTeam = BB9PXVJ39L;
 					};
 					E0479F401D6688F80001C14F = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = E0479F2C1D6688F70001C14F;
-					};
-					E0479F4B1D6688F80001C14F = {
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = E0479F2C1D6688F70001C14F;
 					};
@@ -224,7 +186,6 @@
 			targets = (
 				E0479F2C1D6688F70001C14F /* SnapTimer */,
 				E0479F401D6688F80001C14F /* SnapTimerTests */,
-				E0479F4B1D6688F80001C14F /* SnapTimerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,13 +202,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E0479F3F1D6688F80001C14F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0479F4A1D6688F80001C14F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,13 +231,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0479F481D6688F80001C14F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,11 +238,6 @@
 			isa = PBXTargetDependency;
 			target = E0479F2C1D6688F70001C14F /* SnapTimer */;
 			targetProxy = E0479F421D6688F80001C14F /* PBXContainerItemProxy */;
-		};
-		E0479F4E1D6688F80001C14F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E0479F2C1D6688F70001C14F /* SnapTimer */;
-			targetProxy = E0479F4D1D6688F80001C14F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,28 +396,6 @@
 			};
 			name = Release;
 		};
-		E0479F5C1D6688F80001C14F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SnapTimerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SnapTimer;
-			};
-			name = Debug;
-		};
-		E0479F5D1D6688F80001C14F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SnapTimerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ar.com.andres.SnapTimerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SnapTimer;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -502,15 +422,6 @@
 			buildConfigurations = (
 				E0479F591D6688F80001C14F /* Debug */,
 				E0479F5A1D6688F80001C14F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E0479F5B1D6688F80001C14F /* Build configuration list for PBXNativeTarget "SnapTimerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E0479F5C1D6688F80001C14F /* Debug */,
-				E0479F5D1D6688F80001C14F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
