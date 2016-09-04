@@ -1,4 +1,4 @@
-![SnapTimer](images/snapTimer-logo.png)
+![SnapTimer](images/snaptimer-logo.png)
 
 # SnapTimer
 
@@ -100,6 +100,11 @@ self.snapTimerView.pauseAnimation()
 
 # Check the sample project!
 
+![samples](images/ej3.gif)
 
-# Todo 
+# Cool ways to improve it?
+
+Hey, If you have cool ideas to add to this please feel free to send a PR! Also if you are using this in your app and what to let me know I'll be happy to add a section here with the apps currently using this!
+
+# Todo
 * Swift 2.3 and 3 👌
