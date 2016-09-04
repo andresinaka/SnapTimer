@@ -10,50 +10,85 @@ import UIKit
 
 class ViewController: UIViewController {
 	@IBOutlet weak var snapTimerView: SnapTimerView!
-	@IBOutlet weak var innerValue: UILabel!
+	@IBOutlet weak var randomSnapTimer: SnapTimerView!
+	@IBOutlet weak var animSnapTimer: SnapTimerView!
+	@IBOutlet weak var animSnapTimer2: SnapTimerView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 
-	@IBAction func animatedAction(sender: AnyObject) {
-
-		self.snapTimerView.outerValue = 0
-		self.snapTimerView.animateOuterToValue(50, duration: 30) {
-			puts("Termino outer!")
-			puts("\(self.snapTimerView.outerValue)")
-		}
-
-		self.snapTimerView.innerValue = 50
-		self.snapTimerView.animateInnerToValue(100, duration: 30) {
-			puts("Termino outer!")
-		}
+	@IBAction func randomInnerAction(sender: AnyObject) {
+		self.randomSnapTimer.innerValue = CGFloat(arc4random_uniform(100))
 	}
 
-	@IBAction func notAnimatedAction(sender: AnyObject) {
-		self.snapTimerView.outerValue = 0
+	@IBAction func randomOuterAction(sender: AnyObject) {
+		self.randomSnapTimer.outerValue = CGFloat(arc4random_uniform(100))
 	}
 
-	@IBAction func pauseAnimations(sender: AnyObject) {
-		self.snapTimerView.pauseAnimation()
+	@IBAction func animInnerAction(sender: AnyObject) {
+		self.animSnapTimer.animateInnerValue(CGFloat(arc4random_uniform(100)))
 	}
-
-	@IBAction func resumeAnimations(sender: AnyObject) {
-		self.snapTimerView.resumeAnimation()
+	
+	@IBAction func animOuterAction(sender: AnyObject) {
+		self.animSnapTimer.animateOuterValue(CGFloat(arc4random_uniform(100)))
 	}
-
-	@IBAction func changeColor(sender: AnyObject) {
-		self.snapTimerView.centerBackgroundColor = UIColor.yellowColor()
-		self.snapTimerView.borderBackgroundColor = UIColor.orangeColor()
-		self.snapTimerView.mainBackgroundColor = UIColor.blueColor()
-	}
-
+	
 	@IBAction func changeInner(sender: UISlider) {
-		self.snapTimerView.animateInnerValue(CGFloat(sender.value))
-		self.innerValue.text = String(sender.value)
+		self.animSnapTimer2.animateInnerValue(CGFloat(sender.value))
+	}
+	
+	@IBAction func changeOuter(sender: UISlider) {
+		self.animSnapTimer2.animateOuterValue(CGFloat(sender.value))
 	}
 
-	@IBAction func changeOuter(sender: UISlider) {
-		self.snapTimerView.animateOuterValue(CGFloat(sender.value))
+	@IBAction func animateBoth(sender: AnyObject) {
+
+		self.randomSnapTimer.animateOuterValue(CGFloat(arc4random_uniform(100)))
+		self.randomSnapTimer.animateInnerValue(CGFloat(arc4random_uniform(100)))
+
+		self.animSnapTimer.animateOuterValue(CGFloat(arc4random_uniform(100)))
+		self.animSnapTimer.animateInnerValue(CGFloat(arc4random_uniform(100)))
+
+		self.animSnapTimer2.animateOuterValue(CGFloat(arc4random_uniform(100)))
+		self.animSnapTimer2.animateInnerValue(CGFloat(arc4random_uniform(100)))
+
 	}
+	
+	@IBAction func changeColor(sender: AnyObject) {
+		var borderColor = UIColor.whiteColor()
+		var centerColor = UIColor.lightGrayColor()
+		var mainColor = UIColor.darkGrayColor()
+		
+		if self.randomSnapTimer.borderBackgroundColor == borderColor {
+			mainColor = UIColor(red: 217/255,
+			                  green: 108/255,
+			                   blue: 6/255,
+			                  alpha: 4)
+			
+			centerColor = UIColor(red: 189/255,
+			                    green: 191/255,
+			                     blue: 9/255,
+			                    alpha: 4)
+			
+			borderColor = UIColor(red: 34/255,
+			                    green: 146/255,
+			                     blue: 164/255,
+			                    alpha: 4)
+		}
+
+		self.randomSnapTimer.mainBackgroundColor = mainColor
+		self.randomSnapTimer.centerBackgroundColor = centerColor
+		self.randomSnapTimer.borderBackgroundColor = borderColor
+		
+		self.animSnapTimer.mainBackgroundColor = mainColor
+		self.animSnapTimer.centerBackgroundColor = centerColor
+		self.animSnapTimer.borderBackgroundColor = borderColor
+		
+		self.animSnapTimer2.mainBackgroundColor = mainColor
+		self.animSnapTimer2.centerBackgroundColor = centerColor
+		self.animSnapTimer2.borderBackgroundColor = borderColor
+	}
+
+
 }
