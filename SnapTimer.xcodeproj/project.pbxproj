@@ -13,9 +13,9 @@
 		E0479F381D6688F70001C14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0479F371D6688F70001C14F /* Assets.xcassets */; };
 		E0479F3B1D6688F70001C14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0479F391D6688F70001C14F /* LaunchScreen.storyboard */; };
 		E0479F461D6688F80001C14F /* SnapTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F451D6688F80001C14F /* SnapTimerTests.swift */; };
-		E0479F621D6691C50001C14F /* SnapTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F611D6691C50001C14F /* SnapTimerView.swift */; };
-		E0479F681D7358C20001C14F /* SnapTimerBorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */; };
-		E06FF6041D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */; };
+		E04FD9AB1D7CB81C0030AB7F /* SnapTimerBorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD9A81D7CB81C0030AB7F /* SnapTimerBorderLayer.swift */; };
+		E04FD9AC1D7CB81C0030AB7F /* SnapTimerCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD9A91D7CB81C0030AB7F /* SnapTimerCircleLayer.swift */; };
+		E04FD9AD1D7CB81C0030AB7F /* SnapTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD9AA1D7CB81C0030AB7F /* SnapTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +39,9 @@
 		E0479F411D6688F80001C14F /* SnapTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0479F451D6688F80001C14F /* SnapTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTimerTests.swift; sourceTree = "<group>"; };
 		E0479F471D6688F80001C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0479F611D6691C50001C14F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerView.swift; path = SnapTimerSample/SnapTimerView.swift; sourceTree = SOURCE_ROOT; };
-		E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerBorderLayer.swift; path = SnapTimerSample/SnapTimerBorderLayer.swift; sourceTree = SOURCE_ROOT; };
-		E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapTimerCircleLayer.swift; path = SnapTimerSample/SnapTimerCircleLayer.swift; sourceTree = SOURCE_ROOT; };
+		E04FD9A81D7CB81C0030AB7F /* SnapTimerBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerBorderLayer.swift; sourceTree = "<group>"; };
+		E04FD9A91D7CB81C0030AB7F /* SnapTimerCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerCircleLayer.swift; sourceTree = "<group>"; };
+		E04FD9AA1D7CB81C0030AB7F /* SnapTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +106,9 @@
 		E06FF6051D77CA3C00F6C1A1 /* SnapTimer */ = {
 			isa = PBXGroup;
 			children = (
-				E0479F611D6691C50001C14F /* SnapTimerView.swift */,
-				E06FF6031D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift */,
-				E0479F671D7358C20001C14F /* SnapTimerBorderLayer.swift */,
+				E04FD9A81D7CB81C0030AB7F /* SnapTimerBorderLayer.swift */,
+				E04FD9A91D7CB81C0030AB7F /* SnapTimerCircleLayer.swift */,
+				E04FD9AA1D7CB81C0030AB7F /* SnapTimerView.swift */,
 			);
 			path = SnapTimer;
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0479F331D6688F70001C14F /* ViewController.swift in Sources */,
-				E0479F681D7358C20001C14F /* SnapTimerBorderLayer.swift in Sources */,
-				E0479F621D6691C50001C14F /* SnapTimerView.swift in Sources */,
 				E0479F311D6688F70001C14F /* AppDelegate.swift in Sources */,
-				E06FF6041D74FD3900F6C1A1 /* SnapTimerCircleLayer.swift in Sources */,
+				E04FD9AD1D7CB81C0030AB7F /* SnapTimerView.swift in Sources */,
+				E04FD9AB1D7CB81C0030AB7F /* SnapTimerBorderLayer.swift in Sources */,
+				E04FD9AC1D7CB81C0030AB7F /* SnapTimerCircleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
