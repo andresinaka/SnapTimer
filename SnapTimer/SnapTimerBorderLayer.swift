@@ -36,8 +36,7 @@ class SnapTimerBorderLayer: CALayer {
 	func animation(key: String) -> CAAnimation {
 		let animation = CABasicAnimation(keyPath: key)
 
-		if let pLayer = self.presentationLayer() as? SnapTimerBorderLayer,
-			value = pLayer.valueForKey(key) {
+		if let pLayer = self.presentationLayer(), value = pLayer.valueForKey(key) {
 			animation.fromValue = value
 		}
 

@@ -108,7 +108,7 @@ class SnapTimerTests: XCTestCase {
 		snapTimer.resumeAnimation()
 		XCTAssertFalse(snapTimer.animationsPaused)
 		XCTAssertEqual(snapTimer.layer.speed, 1.0)
-		
+
 		snapTimer.resumeAnimation()
 		XCTAssertFalse(snapTimer.animationsPaused)
 	}

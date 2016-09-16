@@ -87,31 +87,37 @@ import UIKit
 		commonInit()
 	}
 
-	private func commonInit() {
-		let radius = min(bounds.width, bounds.height) * 0.5
+	override public func layoutSubviews() {
+		super.layoutSubviews()
 
+		let radius = min(bounds.width, bounds.height) * 0.5
+		self.mainCircleLayer.radius = radius
+		self.mainCircleLayer.frame = self.bounds
+
+		self.centerLayer.radius = radius/2
+		self.centerLayer.frame = self.bounds
+
+		self.borderLayer.radius = radius * 0.75
+		self.borderLayer.width = radius * 0.33
+		self.borderLayer.frame = self.bounds
+	}
+
+	private func commonInit() {
 		self.mainCircleLayer = SnapTimerCircleLayer()
 		self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
-		self.mainCircleLayer.radius = radius
 		self.mainCircleLayer.contentsScale = UIScreen.mainScreen().scale
-		self.mainCircleLayer.frame = self.bounds
 		self.layer.addSublayer(mainCircleLayer)
 
 		self.centerLayer = SnapTimerCircleLayer()
 		self.centerLayer.circleColor = self.centerBackgroundColor.CGColor
 		self.centerLayer.startAngle = SnapTimerView.radianForValue(self.innerProperty)
-		self.centerLayer.radius = radius/2
 		self.centerLayer.contentsScale = UIScreen.mainScreen().scale
-		self.centerLayer.frame = self.bounds
 		self.layer.addSublayer(centerLayer)
 
 		self.borderLayer = SnapTimerBorderLayer()
 		self.borderLayer.circleColor = self.borderBackgroundColor.CGColor
 		self.borderLayer.startAngle = SnapTimerView.radianForValue(self.outerProperty)
-		self.borderLayer.radius = radius * 0.75
-		self.borderLayer.width = radius * 0.33
 		self.borderLayer.contentsScale = UIScreen.mainScreen().scale
-		self.borderLayer.frame = self.bounds
 		self.layer.addSublayer(borderLayer)
 	}
 
