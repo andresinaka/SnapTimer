@@ -24,14 +24,14 @@ class SnapTimerTests: XCTestCase {
 
 	func testAssingColors() {
 		let snapTimer = SnapTimerView()
-		snapTimer.mainBackgroundColor = UIColor.redColor()
-		XCTAssertTrue(CGColorEqualToColor(snapTimer.mainCircleLayer.circleColor, UIColor.redColor().CGColor))
+		snapTimer.mainBackgroundColor = UIColor.red
+		XCTAssertTrue(CGColorEqualToColor(snapTimer.mainCircleLayer.circleColor, UIColor.red.cgColor))
 
-		snapTimer.centerBackgroundColor = UIColor.blueColor()
-		XCTAssertTrue(CGColorEqualToColor(snapTimer.mainCircleLayer.circleColor, UIColor.redColor().CGColor))
+		snapTimer.centerBackgroundColor = UIColor.blue
+		XCTAssertTrue(CGColorEqualToColor(snapTimer.mainCircleLayer.circleColor, UIColor.red.cgColor))
 
-		snapTimer.borderBackgroundColor = UIColor.blackColor()
-		XCTAssertTrue(CGColorEqualToColor(snapTimer.borderLayer.circleColor, UIColor.blackColor().CGColor))
+		snapTimer.borderBackgroundColor = UIColor.black
+		XCTAssertTrue(CGColorEqualToColor(snapTimer.borderLayer.circleColor, UIColor.black.cgColor))
 	}
 
 	func testStartEndAngle() {
@@ -58,7 +58,7 @@ class SnapTimerTests: XCTestCase {
 	}
 
 	func testInnerAnimationCallbacks() {
-		let expectation = self.expectationWithDescription("animation callbacks")
+		let expectation = self.expectation(description: "animation callbacks")
 
 		let snapTimer = SnapTimerView()
 		snapTimer.outerValue = 0
@@ -69,7 +69,7 @@ class SnapTimerTests: XCTestCase {
 			expectation.fulfill()
 		}
 
-		self.waitForExpectationsWithTimeout(3) { (error) in
+		self.waitForExpectations(timeout: 3) { (error) in
 			if let _ = error {
 				XCTFail("Expectation not fulfilled")
 			}
@@ -77,7 +77,7 @@ class SnapTimerTests: XCTestCase {
 	}
 
 	func testOuterAnimationCallbacks() {
-		let expectation = self.expectationWithDescription("animation callbacks")
+		let expectation = self.expectation(description: "animation callbacks")
 
 		let snapTimer = SnapTimerView()
 		snapTimer.outerValue = 25
@@ -88,7 +88,7 @@ class SnapTimerTests: XCTestCase {
 			expectation.fulfill()
 		}
 
-		self.waitForExpectationsWithTimeout(3) { (error) in
+		self.waitForExpectations(timeout: 3) { (error) in
 			if let _ = error {
 				XCTFail("Expectation not fulfilled")
 			}
@@ -108,7 +108,7 @@ class SnapTimerTests: XCTestCase {
 		snapTimer.resumeAnimation()
 		XCTAssertFalse(snapTimer.animationsPaused)
 		XCTAssertEqual(snapTimer.layer.speed, 1.0)
-		
+
 		snapTimer.resumeAnimation()
 		XCTAssertFalse(snapTimer.animationsPaused)
 	}
