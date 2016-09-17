@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SnapTimer"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "SnapTimer is an implementation of Snapchat's stories timer"
   s.description  = <<-DESC
                    Build a drop-in UIView that behaves exactly as Snapchat's stories timer. Easy to use and easy to extend.
