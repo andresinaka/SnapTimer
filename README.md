@@ -6,6 +6,11 @@ SnapTimer is a custom UIView that behaves exactly the same as the one on Snapcha
 
 [![Build Status](https://travis-ci.org/andresinaka/SnapTimer.svg?branch=master)](https://travis-ci.org/andresinaka/SnapTimer) [![codecov.io](https://codecov.io/github/andresinaka/SnapTimer/badge.svg?branch=master)](https://codecov.io/github/andresinaka/SnapTimer?branch=master)
 
+```
+Swift 3.0 Support on master branch! 👌👌 
+Swift 2.3 Support on Swift2.3.
+```
+
 ## Features
 
 - Two different timers, 'outer' and 'inner'.
@@ -26,13 +31,13 @@ You can just clone the repo and copy the ```SnapTimer``` folder to your project 
  
 ### Setting up with [CocoaPods](http://cocoapods.org/)
 
-```
+```ruby
 pod 'SnapTimer'
 ```
 
 Then:
 
-``` 
+```swift
 import SnapTimer
 ```
 
@@ -105,6 +110,3 @@ self.snapTimerView.pauseAnimation()
 # Cool ways to improve it?
 
 Hey, If you have cool ideas to add to this please feel free to send a PR! Also if you are using this in your app and what to let me know I'll be happy to add a section here with the apps currently using this!
-
-# Todo
-* Swift 2.3 and 3 👌

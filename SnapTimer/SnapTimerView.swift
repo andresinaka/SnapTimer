@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class SnapTimerView: UIView {
+@IBDesignable open class SnapTimerView: UIView {
 	static let startAngle = 3/2 * CGFloat(M_PI)
 	static let endAngle = 7/2 * CGFloat(M_PI)
 
@@ -18,24 +18,24 @@ import UIKit
 
 	internal var animationsPaused = false
 
-	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGrayColor() {
+	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGray {
 		didSet {
-			self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
+			self.mainCircleLayer.circleColor = self.mainBackgroundColor.cgColor
 		}
 	}
-	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGrayColor() {
+	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGray {
 		didSet {
-			self.centerLayer.circleColor = self.centerBackgroundColor.CGColor
+			self.centerLayer.circleColor = self.centerBackgroundColor.cgColor
 		}
 	}
-	@IBInspectable var borderBackgroundColor: UIColor = UIColor.whiteColor() {
+	@IBInspectable var borderBackgroundColor: UIColor = UIColor.white {
 		didSet {
-			self.borderLayer.circleColor = borderBackgroundColor.CGColor
+			self.borderLayer.circleColor = borderBackgroundColor.cgColor
 		}
 	}
 
-	private var outerProperty: CGFloat = 0
-	private var innerProperty: CGFloat = 0
+	fileprivate var outerProperty: CGFloat = 0
+	fileprivate var innerProperty: CGFloat = 0
 
 	@IBInspectable var outerValue: CGFloat {
 		set {
@@ -63,12 +63,12 @@ import UIKit
 		}
 	}
 
-	public func animateOuterValue(value: CGFloat) {
+	open func animateOuterValue(_ value: CGFloat) {
 		self.outerProperty = SnapTimerView.sanitizeValue(value)
 		self.borderLayer.startAngle = SnapTimerView.radianForValue(self.outerProperty)
 	}
 
-	public func animateInnerValue(value: CGFloat) {
+	open func animateInnerValue(_ value: CGFloat) {
 		self.innerProperty = SnapTimerView.sanitizeValue(value)
 		self.centerLayer.startAngle = SnapTimerView.radianForValue(self.innerProperty)
 	}
@@ -83,39 +83,45 @@ import UIKit
 		commonInit()
 	}
 
-	override public func prepareForInterfaceBuilder() {
+	override open func prepareForInterfaceBuilder() {
 		commonInit()
 	}
 
-	private func commonInit() {
-		let radius = min(bounds.width, bounds.height) * 0.5
+    override open func layoutSubviews() {
+        super.layoutSubviews()
 
+        let radius = min(bounds.width, bounds.height) * 0.5
+        self.mainCircleLayer.radius = radius
+        self.mainCircleLayer.frame = self.bounds
+
+        self.centerLayer.radius = radius/2
+        self.centerLayer.frame = self.bounds
+
+        self.borderLayer.radius = radius * 0.75
+        self.borderLayer.width = radius * 0.33
+        self.borderLayer.frame = self.bounds
+    }
+
+	fileprivate func commonInit() {
 		self.mainCircleLayer = SnapTimerCircleLayer()
-		self.mainCircleLayer.circleColor = self.mainBackgroundColor.CGColor
-		self.mainCircleLayer.radius = radius
-		self.mainCircleLayer.contentsScale = UIScreen.mainScreen().scale
-		self.mainCircleLayer.frame = self.bounds
+		self.mainCircleLayer.circleColor = self.mainBackgroundColor.cgColor
+		self.mainCircleLayer.contentsScale = UIScreen.main.scale
 		self.layer.addSublayer(mainCircleLayer)
 
 		self.centerLayer = SnapTimerCircleLayer()
-		self.centerLayer.circleColor = self.centerBackgroundColor.CGColor
+		self.centerLayer.circleColor = self.centerBackgroundColor.cgColor
 		self.centerLayer.startAngle = SnapTimerView.radianForValue(self.innerProperty)
-		self.centerLayer.radius = radius/2
-		self.centerLayer.contentsScale = UIScreen.mainScreen().scale
-		self.centerLayer.frame = self.bounds
+		self.centerLayer.contentsScale = UIScreen.main.scale
 		self.layer.addSublayer(centerLayer)
 
 		self.borderLayer = SnapTimerBorderLayer()
-		self.borderLayer.circleColor = self.borderBackgroundColor.CGColor
+		self.borderLayer.circleColor = self.borderBackgroundColor.cgColor
 		self.borderLayer.startAngle = SnapTimerView.radianForValue(self.outerProperty)
-		self.borderLayer.radius = radius * 0.75
-		self.borderLayer.width = radius * 0.33
-		self.borderLayer.contentsScale = UIScreen.mainScreen().scale
-		self.borderLayer.frame = self.bounds
+		self.borderLayer.contentsScale = UIScreen.main.scale
 		self.layer.addSublayer(borderLayer)
 	}
 
-	public func animateOuterToValue(value: CGFloat, duration: NSTimeInterval, completion: (() -> Void)?) {
+	open func animateOuterToValue(_ value: CGFloat, duration: TimeInterval, completion: (() -> Void)?) {
 		CATransaction.begin()
 		CATransaction.setAnimationDuration(duration)
 		CATransaction.setCompletionBlock(completion)
@@ -123,7 +129,7 @@ import UIKit
 		CATransaction.commit()
 	}
 
-	public func animateInnerToValue(value: CGFloat, duration: NSTimeInterval, completion: (() -> Void)?) {
+	open func animateInnerToValue(_ value: CGFloat, duration: TimeInterval, completion: (() -> Void)?) {
 		CATransaction.begin()
 		CATransaction.setAnimationDuration(duration)
 		CATransaction.setCompletionBlock(completion)
@@ -131,15 +137,15 @@ import UIKit
 		CATransaction.commit()
 	}
 
-	public func pauseAnimation() {
+	open func pauseAnimation() {
 		self.animationsPaused = true
 
-		let pausedTime = self.layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+		let pausedTime = self.layer.convertTime(CACurrentMediaTime(), from: nil)
 		self.layer.speed = 0.0
 		self.layer.timeOffset = pausedTime
 	}
 
-	public func resumeAnimation() {
+	open func resumeAnimation() {
 		if !self.animationsPaused {
 			return
 		}
@@ -149,11 +155,11 @@ import UIKit
 		self.layer.speed = 1.0
 		self.layer.timeOffset = 0.0
 		self.layer.beginTime = 0.0
-		let timeSincePause = self.layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
+		let timeSincePause = self.layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
 		self.layer.beginTime = timeSincePause
 	}
 
-	internal class func sanitizeValue(value: CGFloat) -> CGFloat {
+	internal class func sanitizeValue(_ value: CGFloat) -> CGFloat {
 		var realValue = value
 		if value < 0 {
 			realValue = 0
@@ -163,7 +169,7 @@ import UIKit
 		return realValue
 	}
 
-	internal class func radianForValue(value: CGFloat) -> CGFloat {
+	internal class func radianForValue(_ value: CGFloat) -> CGFloat {
 		let realValue = SnapTimerView.sanitizeValue(value)
 		return (realValue * 4/2 * CGFloat(M_PI) / 100) + SnapTimerView.startAngle
 	}
